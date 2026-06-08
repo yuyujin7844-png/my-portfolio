@@ -5,14 +5,15 @@ import LinearProgress from '@mui/material/LinearProgress'
 import Grid from '@mui/material/Grid'
 import Chip from '@mui/material/Chip'
 import Divider from '@mui/material/Divider'
+import { SiReact, SiJavascript, SiTypescript, SiNodedotjs, SiMui, SiGit } from 'react-icons/si'
 
 const SKILLS = [
-  { name: 'React',        level: 80, iconColor: '#61DAFB', initial: 'Re' },
-  { name: 'JavaScript',   level: 75, iconColor: '#F7DF1E', initial: 'JS' },
-  { name: 'TypeScript',   level: 60, iconColor: '#3178C6', initial: 'TS' },
-  { name: 'Node.js',      level: 65, iconColor: '#539E43', initial: 'No' },
-  { name: 'CSS / MUI',    level: 70, iconColor: '#007FFF', initial: 'CS' },
-  { name: 'Git / GitHub', level: 75, iconColor: '#F05032', initial: 'Gi' },
+  { name: 'React',        level: 80, iconColor: '#61DAFB', Icon: SiReact },
+  { name: 'JavaScript',   level: 75, iconColor: '#F7DF1E', Icon: SiJavascript },
+  { name: 'TypeScript',   level: 60, iconColor: '#3178C6', Icon: SiTypescript },
+  { name: 'Node.js',      level: 65, iconColor: '#539E43', Icon: SiNodedotjs },
+  { name: 'CSS / MUI',    level: 70, iconColor: '#007FFF', Icon: SiMui },
+  { name: 'Git / GitHub', level: 75, iconColor: '#F05032', Icon: SiGit },
 ]
 
 const TAGS = ['React', 'TypeScript', 'Next.js', 'Node.js', 'MUI', 'Git', 'Figma', 'Python']
@@ -57,23 +58,22 @@ export default function SkillSection() {
                 }}
               >
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.2 }}>
                     <Box
                       sx={{
-                        width: 28,
-                        height: 28,
-                        borderRadius: '6px',
-                        bgcolor: skill.iconColor,
+                        width: 32,
+                        height: 32,
+                        borderRadius: '8px',
+                        bgcolor: '#F2EDE8',
+                        border: '1px solid #D9D0C8',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         flexShrink: 0,
-                        boxShadow: `0 2px 6px ${skill.iconColor}55`,
+                        boxShadow: `0 2px 6px ${skill.iconColor}33`,
                       }}
                     >
-                      <Typography sx={{ fontSize: '0.6rem', fontWeight: 800, color: '#fff', letterSpacing: -0.5, lineHeight: 1, textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
-                        {skill.initial}
-                      </Typography>
+                      <skill.Icon size={18} color={skill.iconColor} />
                     </Box>
                     <Typography variant="body2" fontWeight={600} color="#1A1A1A">
                       {skill.name}
