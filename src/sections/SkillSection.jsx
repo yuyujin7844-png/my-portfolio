@@ -7,12 +7,12 @@ import Chip from '@mui/material/Chip'
 import Divider from '@mui/material/Divider'
 
 const SKILLS = [
-  { name: 'React', level: 80 },
-  { name: 'JavaScript', level: 75 },
-  { name: 'TypeScript', level: 60 },
-  { name: 'Node.js', level: 65 },
-  { name: 'CSS / MUI', level: 70 },
-  { name: 'Git / GitHub', level: 75 },
+  { name: 'React',        level: 80, iconColor: '#61DAFB', initial: 'Re' },
+  { name: 'JavaScript',   level: 75, iconColor: '#F7DF1E', initial: 'JS' },
+  { name: 'TypeScript',   level: 60, iconColor: '#3178C6', initial: 'TS' },
+  { name: 'Node.js',      level: 65, iconColor: '#539E43', initial: 'No' },
+  { name: 'CSS / MUI',    level: 70, iconColor: '#007FFF', initial: 'CS' },
+  { name: 'Git / GitHub', level: 75, iconColor: '#F05032', initial: 'Gi' },
 ]
 
 const TAGS = ['React', 'TypeScript', 'Next.js', 'Node.js', 'MUI', 'Git', 'Figma', 'Python']
@@ -56,10 +56,29 @@ export default function SkillSection() {
                   textAlign: 'left',
                 }}
               >
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                  <Typography variant="body2" fontWeight={600} color="#1A1A1A">
-                    {skill.name}
-                  </Typography>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <Box
+                      sx={{
+                        width: 28,
+                        height: 28,
+                        borderRadius: '6px',
+                        bgcolor: skill.iconColor,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                        boxShadow: `0 2px 6px ${skill.iconColor}55`,
+                      }}
+                    >
+                      <Typography sx={{ fontSize: '0.6rem', fontWeight: 800, color: '#fff', letterSpacing: -0.5, lineHeight: 1, textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
+                        {skill.initial}
+                      </Typography>
+                    </Box>
+                    <Typography variant="body2" fontWeight={600} color="#1A1A1A">
+                      {skill.name}
+                    </Typography>
+                  </Box>
                   <Typography variant="body2" color="#8B1A2F" fontWeight={700}>
                     {skill.level}%
                   </Typography>
